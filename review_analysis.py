@@ -11,6 +11,15 @@ with open('reviews.txt', 'r') as file: # open and read review.txt
 		data.append(line.strip()) # remove '/n' sign
 		count += 1
 		if count % 10000 == 0:
-			print('Processing...' + str(len(data)))
-print(len(data))
+			print('Processing...', len(data))
+print('Total: ', len(data))
 print(data[0]) # Print out the 1st review in data list
+print(len(data[0])) # Print out the length of 1st review
+print('-----------------')
+# Count the average length of each review
+sum_length = 0 # As a counter
+for d in data:
+	sum_length = sum_length + len(d) # Keep counting and add the length per review
+average_length = sum_length / len(data)
+print('The average length per review is', round(average_length))
+	
